@@ -1,6 +1,8 @@
 package com.blind.heap;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.PriorityQueue;
 // https://www.youtube.com/watch?v=itmhHWaHupI
 public class MedianFinder {
@@ -40,15 +42,37 @@ public class MedianFinder {
 			return min.peek();
 	}
 
-	public static void mail(String args[]) {
+	
+	// Brute force Approach
+	private List<Double> list=new ArrayList<Double>();
+    public MedianFinder() {
+        
+    }
+    
+    public void addNum3(int num) {
+        list.add((double)num);
+    }
+    
+    public double findMedian3() {
+        Collections.sort(list);
+        if(list.size() % 2 !=0){
+            return (double)list.get(list.size()/2);
+        }else{
+            int div=list.size()/2;
+            double one = list.get(div);
+            double two = list.get(--div);
+            return (one+two)/2;
+        }
+    }
+	public static void main(String args[]) {
 		// TODO Auto-generated method stub
 		MedianFinder m = new MedianFinder();
-		m.addNum(2);
-		m.addNum(3);
-		System.out.println(m.findMedian());
-		m.addNum(5);
-		m.addNum(1);
-		System.out.println(m.findMedian());
+		m.addNum2(2);
+		m.addNum2(3);
+		System.out.println(m.findMedian2());
+		m.addNum2(5);
+		m.addNum2(1);
+		System.out.println(m.findMedian2());
 
 	}
 

@@ -43,7 +43,9 @@ public class DesignAddandSearchWordsDataStructure {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		DesignAddandSearchWordsDataStructure obj = new DesignAddandSearchWordsDataStructure();
+		obj.addWord("pradeep");
+		obj.search("pradeep");
 	}
 
 }

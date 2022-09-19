@@ -1,5 +1,7 @@
 package com.blind.linkedlist;
 
+import java.util.Stack;
+
 public class ReverseLinkedList {
 	public static class Node{
 		int val;
@@ -8,7 +10,7 @@ public class ReverseLinkedList {
 			this.val=val;
 		}
 	}
-	public Node reverseList(Node head) {
+	public static Node reverseList(Node head) {
         if(head == null)
             return null;
         Node root=head.next;
@@ -21,9 +23,19 @@ public class ReverseLinkedList {
         }
         return head;
     }
+
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
-	}
+		Node head=new Node(1);
+		head.next=new Node(2);
+		head.next.next = new Node(3);
+		head.next.next.next=new Node(4);
+		Node root=reverseList(head);
+		while(root !=null) {
+			System.out.println(root.val);
+			root=root.next;
+		}
+		}
 
 }

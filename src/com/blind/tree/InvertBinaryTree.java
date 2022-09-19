@@ -39,8 +39,8 @@ public class InvertBinaryTree {
 	    public static TreeNode invertTree2(TreeNode root) {
 	    	 if(root == null) return null;
 	         TreeNode tmp = root.left;
-	         root.left = invertTree(root.right);
-	         root.right = invertTree(tmp);
+	         root.left = invertTree2(root.right);
+	         root.right = invertTree2(tmp);
 	         return root;
 	    }
 	    // Approach - 3 post-order traversal
